@@ -29,11 +29,14 @@ func main() {
 			if err != nil {
 				panic(err)
 			}
+
+			// デバッグ用の関数です。 ここまでで、io.Readerからバイト列を読み込んで分析してデバッグ出力
 			dump, err := httputil.DumpRequest(request, true)
 			if err != nil {
 				panic(err)
 			}
 			fmt.Println(string(dump))
+
 			// レスポンスを書き込む
 			response := http.Response{
 				StatusCode: 200,
